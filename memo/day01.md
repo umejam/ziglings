@@ -14,3 +14,15 @@
   ^
   ```
   * public(external)にするには先頭に`pub`を付ける
+
+## 002 std
+
+* ライブラリを使うときは`@import`関数でインポートしなければならない
+* `@import`はインポートされたコードを表すconst値を返す
+  ```shell
+  $ zig run 002_std.zig
+  ./002_std.zig:14:1: error: variable of type 'type' must be constant
+  var std = @import("std");
+  ^
+  ```
+  * `@import`の戻り値を受け取る変数の名前はインポートしたライブラリ名に合わせるのが慣例
